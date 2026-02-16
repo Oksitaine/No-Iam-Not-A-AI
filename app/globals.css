@@ -1,26 +1,655 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
+  --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sub-foreground: var(--sub-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 1px);
+  --radius-xl: calc(var(--radius) + 2px);
+  --radius-2xl: calc(var(--radius) + 3px);
+  --radius-3xl: calc(var(--radius) + 4px);
+  --radius-4xl: calc(var(--radius) + 5px);
+
+  /* ── Spacing tokens → utilities: px-[name], gap-[name], p-[name] ── */
+  --spacing-cta-xs-px: var(--cta-xs-px);
+  --spacing-cta-xs-gap: var(--cta-xs-gap);
+  --spacing-cta-xs-icon-px-adj: var(--cta-xs-icon-px-adj);
+  --spacing-cta-sm-px: var(--cta-sm-px);
+  --spacing-cta-sm-gap: var(--cta-sm-gap);
+  --spacing-cta-sm-icon-px-adj: var(--cta-sm-icon-px-adj);
+  --spacing-cta-px: var(--cta-px);
+  --spacing-cta-gap: var(--cta-gap);
+  --spacing-cta-icon-px-adj: var(--cta-icon-px-adj);
+  --spacing-cta-lg-px: var(--cta-lg-px);
+  --spacing-cta-lg-gap: var(--cta-lg-gap);
+  --spacing-cta-lg-icon-px-adj: var(--cta-lg-icon-px-adj);
+  --spacing-container-padding: var(--container-padding);
+  --spacing-container-padding-sm: var(--container-padding-sm);
+  --spacing-container-padding-xs: var(--container-padding-xs);
+  --spacing-container-padding-menu: var(--container-padding-menu);
+  --spacing-container-gap: var(--container-gap);
+  --spacing-container-gap-sm: var(--container-gap-sm);
+  --spacing-container-gap-xs: var(--container-gap-xs);
+  --spacing-gap-inline-tight: var(--gap-inline-tight);
+  --spacing-gap-inline: var(--gap-inline);
+  --spacing-gap-inline-wide: var(--gap-inline-wide);
+  --spacing-gap-stack-tight: var(--gap-stack-tight);
+  --spacing-gap-stack: var(--gap-stack);
+  --spacing-gap-stack-wide: var(--gap-stack-wide);
+  --spacing-gap-section: var(--gap-section);
+  --spacing-menu-item-px: var(--menu-item-px);
+  --spacing-menu-item-py: var(--menu-item-py);
+  --spacing-menu-item-gap: var(--menu-item-gap);
+  --spacing-menu-item-inset: var(--menu-item-inset);
+  --spacing-menu-content-padding: var(--menu-content-padding);
+  --spacing-menu-label-px: var(--menu-label-px);
+  --spacing-menu-label-py: var(--menu-label-py);
+  --spacing-menu-separator-mx: var(--menu-separator-mx);
+  --spacing-menu-separator-my: var(--menu-separator-my);
+  --spacing-badge-px: var(--badge-px);
+  --spacing-badge-py: var(--badge-py);
+  --spacing-badge-gap: var(--badge-gap);
+  --spacing-badge-icon-px-adj: var(--badge-icon-px-adj);
+
+  /* ── Height tokens → h-* utilities ── */
+  --spacing-cta-xs-height: var(--cta-xs-height);
+  --spacing-cta-sm-height: var(--cta-sm-height);
+  --spacing-cta-height: var(--cta-height);
+  --spacing-cta-lg-height: var(--cta-lg-height);
+  --spacing-control-height-xs: var(--control-height-xs);
+  --spacing-control-height-sm: var(--control-height-sm);
+  --spacing-control-height: var(--control-height);
+  --spacing-control-height-lg: var(--control-height-lg);
+  --spacing-control-height-xl: var(--control-height-xl);
+
+  /* ── Form control padding ── */
+  --spacing-control-px: var(--control-px);
+
+  /* ── Menu min-width ── */
+  --spacing-menu-min-width: var(--menu-min-width);
+
+  /* ── Size tokens → utilities: h-[name], w-[name], size-[name] ── */
+  --size-cta-xs-height: var(--cta-xs-height);
+  --size-cta-sm-height: var(--cta-sm-height);
+  --size-cta-height: var(--cta-height);
+  --size-cta-lg-height: var(--cta-lg-height);
+  --size-cta-icon-xs: var(--cta-icon-xs-size);
+  --size-cta-icon-sm: var(--cta-icon-sm-size);
+  --size-cta-icon: var(--cta-icon-size);
+  --size-cta-icon-lg: var(--cta-icon-lg-size);
+  --size-cta-xs-icon: var(--cta-xs-icon-size);
+  --size-control-xs: var(--control-height-xs);
+  --size-control-sm: var(--control-height-sm);
+  --size-control: var(--control-height);
+  --size-control-lg: var(--control-height-lg);
+  --size-control-xl: var(--control-height-xl);
+  --size-icon-xs: var(--icon-xs);
+  --size-icon-sm: var(--icon-sm);
+  --size-icon: var(--icon);
+  --size-icon-lg: var(--icon-lg);
+  --size-icon-xl: var(--icon-xl);
+  --size-badge-height: var(--badge-height);
+  --size-menu-min-width: var(--menu-min-width);
+
+  /* ── Typography tokens ── */
+  --font-size-2xs: var(--text-2xs);
+  --font-size-xs: var(--text-xs);
+  --font-size-sm: var(--text-sm);
+  --font-size-base: var(--text-base);
+  --font-size-lg: var(--text-lg);
+  --font-size-xl: var(--text-xl);
+  --font-size-2xl: var(--text-2xl);
+  --line-height-none: var(--leading-none);
+  --line-height-tight: var(--leading-tight);
+  --line-height-snug: var(--leading-snug);
+  --line-height-normal: var(--leading-normal);
+  --line-height-relaxed: var(--leading-relaxed);
+  --line-height-loose: var(--leading-loose);
+  --letter-spacing-tight: var(--tracking-tight);
+  --letter-spacing-normal: var(--tracking-normal);
+  --letter-spacing-wide: var(--tracking-wide);
+  --letter-spacing-widest: var(--tracking-widest);
+  --font-weight-normal: var(--font-weight-normal);
+  --font-weight-medium: var(--font-weight-medium);
+  --font-weight-semibold: var(--font-weight-semibold);
+  --font-weight-bold: var(--font-weight-bold);
+
+  /* ── Z-index tokens → utilities: z-[name] ── */
+  --z-index-base: var(--z-base);
+  --z-index-above: var(--z-above);
+  --z-index-sidebar: var(--z-sidebar);
+  --z-index-sticky: var(--z-sticky);
+  --z-index-overlay: var(--z-overlay);
+  --z-index-max: var(--z-max);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ═══════════════════════════════════════════════════════════════════════
+   NIANH — No I am not Human · Direction Artistique
+   Surveillance / CCTV aesthetic · Teal/cyan · Dystopian · Oppressive
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ── Teal / Cyan surveillance palette (HSL) ── */
+  --terminal-50:  185 55% 95%;
+  --terminal-100: 184 45% 88%;
+  --terminal-200: 183 40% 75%;
+  --terminal-300: 182 45% 55%;
+  --terminal-400: 181 65% 40%;
+  --terminal-500: 180 100% 30%;
+  --terminal-600: 180 100% 22%;
+  --terminal-700: 182 75% 16%;
+  --terminal-800: 184 55% 10%;
+  --terminal-900: 185 45% 7%;
+  --terminal-950: 187 35% 4%;
+  --terminal-1000: 188 25% 2%;
+
+  /* ── Warning accent palette (desaturated amber) ── */
+  --warning-400: 28 60% 52%;
+  --warning-500: 25 65% 45%;
+  --warning-600: 22 60% 38%;
+
+  --black: 185 15% 2%;
+  --white: 185 8% 96%;
+
+  /* ═══════════════════════════════════════════════════════════════
+     LIGHT MODE — CCTV printout / cold surveillance report
+     ═══════════════════════════════════════════════════════════════ */
+  --background: hsl(185 12% 94%);
+  --foreground: hsl(185 35% 10%);
+  --sub-foreground: hsl(185 8% 85%);
+  --card: hsl(185 10% 92%);
+  --card-foreground: hsl(185 35% 10%);
+  --popover: hsl(185 12% 89%);
+  --popover-foreground: hsl(185 35% 10%);
+  --primary: hsl(180 100% 25%);
+  --primary-foreground: hsl(185 8% 96%);
+  --secondary: hsl(var(--warning-500));
+  --secondary-foreground: hsl(185 25% 8%);
+  --muted: hsl(185 8% 89%);
+  --muted-foreground: hsl(185 12% 38%);
+  --accent: hsl(180 25% 25% / 8%);
+  --accent-foreground: hsl(180 25% 25% / 15%);
+  --destructive: hsl(0 80% 50%);
+  --border: hsl(185 18% 28% / 15%);
+  --input: hsl(185 8% 87%);
+  --ring: hsl(180 75% 32%);
+  --chart-1: hsl(180 100% 30%);
+  --chart-2: hsl(181 65% 40%);
+  --chart-3: hsl(var(--warning-500));
+  --chart-4: hsl(200 55% 42%);
+  --chart-5: hsl(182 45% 52%);
+  --radius: 2px;
+
+  --sidebar: var(--background);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--primary);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  /* ═══════════════════════════════════════════════════════════════
+     DESIGN TOKENS — Base Spacing Unit
+     Modifier cette seule valeur rescale tout le système
+     ═══════════════════════════════════════════════════════════════ */
+  --spacing-unit: 0.25rem;
+
+  /* ── CTA / Button — 4 tailles ── */
+  --cta-xs-height: 26px;
+  --cta-xs-px: calc(var(--spacing-unit) * 2.5);
+  --cta-xs-gap: var(--spacing-unit);
+  --cta-xs-icon-size: 0.75rem;
+  --cta-xs-icon-px-adj: calc(var(--spacing-unit) * 1.5);
+
+  --cta-sm-height: 2rem;
+  --cta-sm-px: calc(var(--spacing-unit) * 3);
+  --cta-sm-gap: var(--spacing-unit);
+  --cta-sm-icon-px-adj: calc(var(--spacing-unit) * 2);
+
+  --cta-height: 2.25rem;
+  --cta-px: calc(var(--spacing-unit) * 3.5);
+  --cta-gap: calc(var(--spacing-unit) * 1.5);
+  --cta-icon-px-adj: calc(var(--spacing-unit) * 2.5);
+
+  --cta-lg-height: 2.5rem;
+  --cta-lg-px: calc(var(--spacing-unit) * 4);
+  --cta-lg-gap: calc(var(--spacing-unit) * 1.5);
+  --cta-lg-icon-px-adj: calc(var(--spacing-unit) * 3);
+
+  --cta-icon-xs-size: var(--cta-xs-height);
+  --cta-icon-sm-size: var(--cta-sm-height);
+  --cta-icon-size: var(--cta-height);
+  --cta-icon-lg-size: var(--cta-lg-height);
+
+  /* ── Hauteurs des contrôles interactifs ── */
+  --control-height-xs: 1.5rem;
+  --control-height-sm: 2rem;
+  --control-height: 2.5rem;
+  --control-height-lg: 3rem;
+  --control-height-xl: 3.5rem;
+  --control-px: calc(var(--spacing-unit) * 4);
+
+  /* ── Container padding ── */
+  --container-padding: calc(var(--spacing-unit) * 6);
+  --container-padding-sm: calc(var(--spacing-unit) * 4);
+  --container-padding-xs: calc(var(--spacing-unit) * 2);
+  --container-padding-menu: var(--spacing-unit);
+  --container-gap: calc(var(--spacing-unit) * 6);
+  --container-gap-sm: calc(var(--spacing-unit) * 4);
+  --container-gap-xs: calc(var(--spacing-unit) * 2);
+
+  /* ── Gaps sémantiques ── */
+  --gap-inline-tight: var(--spacing-unit);
+  --gap-inline: calc(var(--spacing-unit) * 1.5);
+  --gap-inline-wide: calc(var(--spacing-unit) * 2);
+  --gap-stack-tight: var(--spacing-unit);
+  --gap-stack: calc(var(--spacing-unit) * 2);
+  --gap-stack-wide: calc(var(--spacing-unit) * 4);
+  --gap-section: calc(var(--spacing-unit) * 6);
+
+  /* ── Tailles d'icônes ── */
+  --icon-xs: 0.75rem;
+  --icon-sm: 0.875rem;
+  --icon: 1rem;
+  --icon-lg: 1.25rem;
+  --icon-xl: 1.5rem;
+
+  /* ── Typographie — monospace everywhere ── */
+  --text-2xs: 0.625rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.813rem;
+  --text-base: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.125rem;
+  --text-2xl: 1.375rem;
+  --leading-none: 1;
+  --leading-tight: 1.3;
+  --leading-snug: 1.45;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+  --leading-loose: 2;
+  --tracking-tight: 0em;
+  --tracking-normal: 0.025em;
+  --tracking-wide: 0.06em;
+  --tracking-widest: 0.15em;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ── Menu / Dropdown ── */
+  --menu-item-px: calc(var(--spacing-unit) * 3);
+  --menu-item-py: calc(var(--spacing-unit) * 2);
+  --menu-item-gap: calc(var(--spacing-unit) * 2);
+  --menu-item-inset: calc(var(--spacing-unit) * 8);
+  --menu-content-padding: var(--spacing-unit);
+  --menu-content-radius: var(--radius);
+  --menu-label-px: calc(var(--spacing-unit) * 2);
+  --menu-label-py: calc(var(--spacing-unit) * 1.5);
+  --menu-separator-mx: calc(var(--spacing-unit) * -1);
+  --menu-separator-my: var(--spacing-unit);
+  --menu-min-width: 145px;
+
+  /* ── Badge ── */
+  --badge-height: 1.25rem;
+  --badge-px: calc(var(--spacing-unit) * 2);
+  --badge-py: calc(var(--spacing-unit) * 0.5);
+  --badge-gap: var(--spacing-unit);
+  --badge-icon-size: var(--icon-xs);
+  --badge-icon-px-adj: calc(var(--spacing-unit) * 1.5);
+  --badge-radius: var(--radius);
+
+  /* ── Bordures — thicker for CRT feel ── */
+  --border-width: 1px;
+  --border-width-2: 2px;
+  --border-width-0: 0px;
+  --ring-width: 2px;
+  --ring-offset: 0px;
+
+  /* ── Ombres (light) — cold teal tint ── */
+  --shadow-xs: 0 1px 2px 0 hsl(185 35% 18% / 0.08);
+  --shadow-sm: 0 1px 3px 0 hsl(185 35% 18% / 0.12), 0 1px 2px -1px hsl(185 35% 18% / 0.08);
+  --shadow-md: 0 4px 6px -1px hsl(185 35% 18% / 0.12), 0 2px 4px -2px hsl(185 35% 18% / 0.08);
+  --shadow-lg: 0 10px 15px -3px hsl(185 35% 18% / 0.15), 0 4px 6px -4px hsl(185 35% 18% / 0.1);
+
+  /* ── Transitions / Animation — snappy terminal feel ── */
+  --duration-fast: 50ms;
+  --duration-normal: 100ms;
+  --duration-slow: 200ms;
+  --ease-default: linear;
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-linear: linear;
+
+  /* ── Z-Index ── */
+  --z-base: 0;
+  --z-above: 1;
+  --z-sidebar: 10;
+  --z-sticky: 20;
+  --z-overlay: 50;
+  --z-max: 9999;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DARK MODE — NIANH surveillance feed / CCTV monitor
+   ═══════════════════════════════════════════════════════════════════════ */
+.dark {
+  --background: hsl(185 18% 3%);
+  --foreground: hsl(180 90% 68%);
+  --sub-foreground: hsl(185 25% 13%);
+
+  --card: hsl(185 14% 6%);
+  --card-foreground: hsl(180 90% 68%);
+
+  --popover: hsl(185 14% 8%);
+  --popover-foreground: hsl(180 90% 68%);
+  --primary: hsl(180 100% 45%);
+  --primary-foreground: hsl(185 25% 3%);
+  --secondary: hsl(var(--warning-500));
+  --secondary-foreground: hsl(185 18% 3%);
+  --muted: hsl(185 12% 9%);
+  --muted-foreground: hsl(183 35% 38%);
+  --accent: hsl(180 100% 45% / 8%);
+  --accent-foreground: hsl(180 90% 68%);
+  --destructive: hsl(0 100% 55%);
+  --border: hsl(180 100% 45% / 12%);
+  --input: hsl(180 100% 45% / 8%);
+  --ring: hsl(180 100% 45%);
+  --chart-1: hsl(180 100% 45%);
+  --chart-2: hsl(182 75% 38%);
+  --chart-3: hsl(var(--warning-400));
+  --chart-4: hsl(200 75% 48%);
+  --chart-5: hsl(183 55% 28%);
+
+  --sidebar: var(--background);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  /* ── Ombres (dark) — cold teal surveillance glow ── */
+  --shadow-xs: 0 0 4px 0 hsl(180 100% 45% / 0.12);
+  --shadow-sm: 0 0 6px 0 hsl(180 100% 45% / 0.16), 0 0 3px 0 hsl(180 100% 45% / 0.08);
+  --shadow-md: 0 0 12px -2px hsl(180 100% 45% / 0.2), 0 0 6px -2px hsl(180 100% 45% / 0.12);
+  --shadow-lg: 0 0 20px -4px hsl(180 100% 45% / 0.25), 0 0 10px -4px hsl(180 100% 45% / 0.16);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   BASE LAYER
+   ═══════════════════════════════════════════════════════════════════════ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+* {
+  scrollbar-width: thin;
 }
+
+.scrollbar-gutter-stable-single {
+  scrollbar-gutter: stable;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CRT EFFECTS — Scanlines, flicker, glow
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Scanline overlay — apply class "crt-scanlines" to a container */
+.crt-scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    hsl(180 100% 45% / 0.03) 2px,
+    hsl(180 100% 45% / 0.03) 4px
+  );
+  z-index: 9998;
+}
+
+/* Subtle CRT flicker — apply class "crt-flicker" */
+@keyframes crt-flicker {
+  0%   { opacity: 1; }
+  3%   { opacity: 0.97; }
+  6%   { opacity: 1; }
+  40%  { opacity: 0.99; }
+  42%  { opacity: 0.96; }
+  44%  { opacity: 1; }
+  80%  { opacity: 0.98; }
+  100% { opacity: 1; }
+}
+.crt-flicker {
+  animation: crt-flicker 4s infinite;
+}
+
+/* Surveillance text glow — apply class "text-glow" */
+.dark .text-glow {
+  text-shadow:
+    0 0 4px hsl(180 100% 45% / 0.5),
+    0 0 8px hsl(180 100% 45% / 0.25),
+    0 0 16px hsl(180 100% 45% / 0.08);
+}
+.text-glow {
+  text-shadow:
+    0 0 2px hsl(180 75% 32% / 0.3),
+    0 0 6px hsl(180 75% 32% / 0.1);
+}
+
+/* Box glow for cards / panels */
+.dark .box-glow {
+  box-shadow:
+    0 0 6px hsl(180 100% 45% / 0.12),
+    0 0 12px hsl(180 100% 45% / 0.06),
+    inset 0 0 6px hsl(180 100% 45% / 0.04);
+}
+.box-glow {
+  box-shadow:
+    0 0 4px hsl(180 75% 32% / 0.1),
+    0 0 8px hsl(180 75% 32% / 0.05);
+}
+
+/* Terminal cursor blink */
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.terminal-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  background: currentColor;
+  animation: cursor-blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+/* Boot-up text reveal */
+@keyframes terminal-type {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+.terminal-type {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: terminal-type 1.5s steps(40) forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   NIANH EFFECTS — Surveillance / CCTV utilities
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* CCTV vignette — radial darkening at edges (fish-eye camera) */
+.nianh-vignette {
+  position: relative;
+}
+.nianh-vignette::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    hsl(185 18% 3% / 0.4) 80%,
+    hsl(185 18% 3% / 0.8) 100%
+  );
+  z-index: 9997;
+}
+
+/* Static noise / grain overlay — animated */
+@keyframes nianh-noise-shift {
+  0%   { background-position: 0 0; }
+  25%  { background-position: -50% 50%; }
+  50%  { background-position: 50% -25%; }
+  75%  { background-position: -25% -50%; }
+  100% { background-position: 0 0; }
+}
+.nianh-noise {
+  position: relative;
+}
+.nianh-noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  animation: nianh-noise-shift 0.5s steps(4) infinite;
+  z-index: 9996;
+}
+
+/* CCTV timestamp text style */
+.nianh-timestamp {
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.625rem;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+/* REC indicator — blinking red dot */
+@keyframes nianh-rec-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+.nianh-rec {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.625rem;
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+.nianh-rec::before {
+  content: '';
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: hsl(0 100% 50%);
+  animation: nianh-rec-blink 1.2s step-end infinite;
+}
+
+/* ── ImageStatusCard aurora animations (chaotic) ── */
+@keyframes aurora-warp-1 {
+  0%   { transform: translate(-15%, 20%) skewX(-8deg) scaleX(1.3) scaleY(0.9); opacity: 0.7; }
+  17%  { transform: translate(25%, -10%) skewX(12deg) scaleX(0.8) scaleY(1.4); opacity: 1; }
+  38%  { transform: translate(-5%, -30%) skewX(-3deg) scaleX(1.5) scaleY(0.7); opacity: 0.5; }
+  55%  { transform: translate(20%, 15%) skewX(7deg) scaleX(0.9) scaleY(1.2); opacity: 0.9; }
+  74%  { transform: translate(-25%, 5%) skewX(-14deg) scaleX(1.1) scaleY(1.1); opacity: 0.6; }
+  100% { transform: translate(-15%, 20%) skewX(-8deg) scaleX(1.3) scaleY(0.9); opacity: 0.7; }
+}
+@keyframes aurora-warp-2 {
+  0%   { transform: translate(20%, -15%) skewY(10deg) scaleX(0.7) scaleY(1.3); opacity: 0.5; }
+  22%  { transform: translate(-20%, 25%) skewY(-6deg) scaleX(1.4) scaleY(0.8); opacity: 0.9; }
+  45%  { transform: translate(10%, 10%) skewY(15deg) scaleX(1.0) scaleY(1.5); opacity: 0.7; }
+  68%  { transform: translate(-10%, -20%) skewY(-12deg) scaleX(1.3) scaleY(0.6); opacity: 1; }
+  100% { transform: translate(20%, -15%) skewY(10deg) scaleX(0.7) scaleY(1.3); opacity: 0.5; }
+}
+@keyframes aurora-warp-3 {
+  0%   { transform: translate(5%, 25%) rotate(5deg) skewX(6deg) scale(1.2); opacity: 0.6; }
+  30%  { transform: translate(-20%, -15%) rotate(-8deg) skewX(-10deg) scale(0.8); opacity: 1; }
+  60%  { transform: translate(15%, -5%) rotate(12deg) skewX(4deg) scale(1.4); opacity: 0.4; }
+  100% { transform: translate(5%, 25%) rotate(5deg) skewX(6deg) scale(1.2); opacity: 0.6; }
+}
+@keyframes aurora-drift-chaotic {
+  0%   { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.5; }
+  20%  { transform: translate(30%, -20%) rotate(15deg) scale(1.3); opacity: 0.8; }
+  40%  { transform: translate(-15%, 25%) rotate(-10deg) scale(0.7); opacity: 1; }
+  65%  { transform: translate(10%, -30%) rotate(8deg) scale(1.1); opacity: 0.4; }
+  85%  { transform: translate(-25%, 10%) rotate(-5deg) scale(1.4); opacity: 0.9; }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.5; }
+}
+@keyframes aurora-pulse-erratic {
+  0%, 100% { opacity: 0.3; transform: scale(0.9) skewX(5deg); }
+  15%  { opacity: 0.8; transform: scale(1.2) skewX(-8deg); }
+  40%  { opacity: 0.4; transform: scale(1.0) skewX(3deg); }
+  60%  { opacity: 1; transform: scale(1.3) skewX(-5deg); }
+  80%  { opacity: 0.5; transform: scale(0.85) skewX(10deg); }
+}
+@keyframes shimmer {
+  0% { background-position: -250% 0; }
+  100% { background-position: 250% 0; }
+}
+.aurora-w1 { animation: aurora-warp-1 7s ease-in-out infinite; }
+.aurora-w2 { animation: aurora-warp-2 9s ease-in-out infinite; }
+.aurora-w3 { animation: aurora-warp-3 11s ease-in-out infinite; }
+.aurora-drift-c { animation: aurora-drift-chaotic 8s ease-in-out infinite; }
+.aurora-pulse-e { animation: aurora-pulse-erratic 4s ease-in-out infinite; }
+.animate-shimmer { animation: shimmer 2.5s ease-in-out infinite; }
