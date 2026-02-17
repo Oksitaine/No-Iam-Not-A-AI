@@ -162,60 +162,60 @@
 
 /* ═══════════════════════════════════════════════════════════════════════
    NIANH — No I am not Human · Direction Artistique
-   Surveillance / CCTV aesthetic · Teal/cyan · Dystopian · Oppressive
+   Night-vision green / Emerald · Analog horror · Oppressive
    ═══════════════════════════════════════════════════════════════════════ */
 
 :root {
 
-  /* ── Teal / Cyan surveillance palette (HSL) ── */
-  --terminal-50:  185 55% 95%;
-  --terminal-100: 184 45% 88%;
-  --terminal-200: 183 40% 75%;
-  --terminal-300: 182 45% 55%;
-  --terminal-400: 181 65% 40%;
-  --terminal-500: 180 100% 30%;
-  --terminal-600: 180 100% 22%;
-  --terminal-700: 182 75% 16%;
-  --terminal-800: 184 55% 10%;
-  --terminal-900: 185 45% 7%;
-  --terminal-950: 187 35% 4%;
-  --terminal-1000: 188 25% 2%;
+  /* ── Emerald / Night-vision green palette (HSL) ── */
+  --terminal-50:  152 45% 93%;
+  --terminal-100: 150 38% 82%;
+  --terminal-200: 150 35% 68%;
+  --terminal-300: 152 40% 48%;
+  --terminal-400: 153 55% 35%;
+  --terminal-500: 155 80% 25%;
+  --terminal-600: 155 75% 18%;
+  --terminal-700: 155 60% 13%;
+  --terminal-800: 156 45% 8%;
+  --terminal-900: 158 35% 5%;
+  --terminal-950: 160 30% 3%;
+  --terminal-1000: 160 20% 1.5%;
 
   /* ── Warning accent palette (desaturated amber) ── */
   --warning-400: 28 60% 52%;
   --warning-500: 25 65% 45%;
   --warning-600: 22 60% 38%;
 
-  --black: 185 15% 2%;
-  --white: 185 8% 96%;
+  --black: 155 15% 1.5%;
+  --white: 150 6% 94%;
 
   /* ═══════════════════════════════════════════════════════════════
-     LIGHT MODE — CCTV printout / cold surveillance report
+     LIGHT MODE — Emerald surveillance printout
      ═══════════════════════════════════════════════════════════════ */
-  --background: hsl(185 12% 94%);
-  --foreground: hsl(185 35% 10%);
-  --sub-foreground: hsl(185 8% 85%);
-  --card: hsl(185 10% 92%);
-  --card-foreground: hsl(185 35% 10%);
-  --popover: hsl(185 12% 89%);
-  --popover-foreground: hsl(185 35% 10%);
-  --primary: hsl(180 100% 25%);
-  --primary-foreground: hsl(185 8% 96%);
+  --background: hsl(150 10% 93%);
+  --foreground: hsl(155 30% 10%);
+  --sub-foreground: hsl(150 6% 82%);
+  --card: hsl(150 8% 90%);
+  --card-foreground: hsl(155 30% 10%);
+  --popover: hsl(150 10% 87%);
+  --popover-foreground: hsl(155 30% 10%);
+  --primary: hsl(152 75% 22%);
+  --primary-foreground: hsl(150 6% 94%);
   --secondary: hsl(var(--warning-500));
-  --secondary-foreground: hsl(185 25% 8%);
-  --muted: hsl(185 8% 89%);
-  --muted-foreground: hsl(185 12% 38%);
-  --accent: hsl(180 25% 25% / 8%);
-  --accent-foreground: hsl(180 25% 25% / 15%);
+  --secondary-foreground: hsl(155 20% 8%);
+  --muted: hsl(150 6% 87%);
+  --muted-foreground: hsl(152 10% 38%);
+  --accent: hsl(152 25% 22% / 8%);
+  --accent-foreground: hsl(152 25% 22% / 15%);
   --destructive: hsl(0 80% 50%);
-  --border: hsl(185 18% 28% / 15%);
-  --input: hsl(185 8% 87%);
-  --ring: hsl(180 75% 32%);
-  --chart-1: hsl(180 100% 30%);
-  --chart-2: hsl(181 65% 40%);
+  --border: hsl(155 15% 25% / 15%);
+  --input: hsl(150 6% 85%);
+  --ring: hsl(152 65% 28%);
+  --chart-1: hsl(152 75% 25%);
+  --chart-2: hsl(153 55% 35%);
   --chart-3: hsl(var(--warning-500));
-  --chart-4: hsl(200 55% 42%);
-  --chart-5: hsl(182 45% 52%);
+  --chart-4: hsl(165 45% 38%);
+  --chart-5: hsl(148 40% 45%);
   --radius: 2px;
 
   --sidebar: var(--background);
@@ -345,11 +345,11 @@
   --ring-width: 2px;
   --ring-offset: 0px;
 
-  /* ── Ombres (light) — cold teal tint ── */
-  --shadow-xs: 0 1px 2px 0 hsl(185 35% 18% / 0.08);
-  --shadow-sm: 0 1px 3px 0 hsl(185 35% 18% / 0.12), 0 1px 2px -1px hsl(185 35% 18% / 0.08);
-  --shadow-md: 0 4px 6px -1px hsl(185 35% 18% / 0.12), 0 2px 4px -2px hsl(185 35% 18% / 0.08);
-  --shadow-lg: 0 10px 15px -3px hsl(185 35% 18% / 0.15), 0 4px 6px -4px hsl(185 35% 18% / 0.1);
+  /* ── Ombres (light) — emerald green tint ── */
+  --shadow-xs: 0 1px 2px 0 hsl(155 30% 15% / 0.08);
+  --shadow-sm: 0 1px 3px 0 hsl(155 30% 15% / 0.12), 0 1px 2px -1px hsl(155 30% 15% / 0.08);
+  --shadow-md: 0 4px 6px -1px hsl(155 30% 15% / 0.12), 0 2px 4px -2px hsl(155 30% 15% / 0.08);
+  --shadow-lg: 0 10px 15px -3px hsl(155 30% 15% / 0.15), 0 4px 6px -4px hsl(155 30% 15% / 0.1);
 
   /* ── Transitions / Animation — snappy terminal feel ── */
   --duration-fast: 50ms;
@@ -370,35 +370,35 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   DARK MODE — NIANH surveillance feed / CCTV monitor
+   DARK MODE — Night-vision / Analog horror green
    ═══════════════════════════════════════════════════════════════════════ */
 .dark {
-  --background: hsl(185 18% 3%);
-  --foreground: hsl(180 90% 68%);
-  --sub-foreground: hsl(185 25% 13%);
+  --background: hsl(155 20% 2.5%);
+  --foreground: hsl(145 70% 58%);
+  --sub-foreground: hsl(155 18% 11%);
 
-  --card: hsl(185 14% 6%);
-  --card-foreground: hsl(180 90% 68%);
+  --card: hsl(155 16% 5%);
+  --card-foreground: hsl(145 70% 58%);
 
-  --popover: hsl(185 14% 8%);
-  --popover-foreground: hsl(180 90% 68%);
-  --primary: hsl(180 100% 45%);
-  --primary-foreground: hsl(185 25% 3%);
+  --popover: hsl(155 16% 7%);
+  --popover-foreground: hsl(145 70% 58%);
+  --primary: hsl(150 85% 38%);
+  --primary-foreground: hsl(158 30% 2%);
   --secondary: hsl(var(--warning-500));
-  --secondary-foreground: hsl(185 18% 3%);
-  --muted: hsl(185 12% 9%);
-  --muted-foreground: hsl(183 35% 38%);
-  --accent: hsl(180 100% 45% / 8%);
-  --accent-foreground: hsl(180 90% 68%);
+  --secondary-foreground: hsl(155 20% 2.5%);
+  --muted: hsl(155 12% 8%);
+  --muted-foreground: hsl(150 28% 32%);
+  --accent: hsl(150 85% 38% / 8%);
+  --accent-foreground: hsl(145 70% 58%);
   --destructive: hsl(0 100% 55%);
-  --border: hsl(180 100% 45% / 12%);
-  --input: hsl(180 100% 45% / 8%);
-  --ring: hsl(180 100% 45%);
-  --chart-1: hsl(180 100% 45%);
-  --chart-2: hsl(182 75% 38%);
+  --border: hsl(150 85% 38% / 12%);
+  --input: hsl(150 85% 38% / 8%);
+  --ring: hsl(150 85% 38%);
+  --chart-1: hsl(150 85% 38%);
+  --chart-2: hsl(152 60% 30%);
   --chart-3: hsl(var(--warning-400));
-  --chart-4: hsl(200 75% 48%);
-  --chart-5: hsl(183 55% 28%);
+  --chart-4: hsl(165 60% 40%);
+  --chart-5: hsl(148 45% 24%);
 
   --sidebar: var(--background);
   --sidebar-foreground: var(--foreground);
@@ -409,11 +409,11 @@
   --sidebar-border: var(--border);
   --sidebar-ring: var(--ring);
 
-  /* ── Ombres (dark) — cold teal surveillance glow ── */
-  --shadow-xs: 0 0 4px 0 hsl(180 100% 45% / 0.12);
-  --shadow-sm: 0 0 6px 0 hsl(180 100% 45% / 0.16), 0 0 3px 0 hsl(180 100% 45% / 0.08);
-  --shadow-md: 0 0 12px -2px hsl(180 100% 45% / 0.2), 0 0 6px -2px hsl(180 100% 45% / 0.12);
-  --shadow-lg: 0 0 20px -4px hsl(180 100% 45% / 0.25), 0 0 10px -4px hsl(180 100% 45% / 0.16);
+  /* ── Ombres (dark) — emerald night-vision glow ── */
+  --shadow-xs: 0 0 4px 0 hsl(150 85% 38% / 0.12);
+  --shadow-sm: 0 0 6px 0 hsl(150 85% 38% / 0.16), 0 0 3px 0 hsl(150 85% 38% / 0.08);
+  --shadow-md: 0 0 12px -2px hsl(150 85% 38% / 0.2), 0 0 6px -2px hsl(150 85% 38% / 0.12);
+  --shadow-lg: 0 0 20px -4px hsl(150 85% 38% / 0.25), 0 0 10px -4px hsl(150 85% 38% / 0.16);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -454,8 +454,8 @@
     to bottom,
     transparent 0px,
     transparent 2px,
-    hsl(180 100% 45% / 0.03) 2px,
-    hsl(180 100% 45% / 0.03) 4px
+    hsl(150 80% 35% / 0.03) 2px,
+    hsl(150 80% 35% / 0.03) 4px
   );
   z-index: 9998;
 }
@@ -478,27 +478,28 @@
 /* Surveillance text glow — apply class "text-glow" */
 .dark .text-glow {
   text-shadow:
-    0 0 4px hsl(180 100% 45% / 0.5),
-    0 0 8px hsl(180 100% 45% / 0.25),
-    0 0 16px hsl(180 100% 45% / 0.08);
+    0 0 4px hsl(150 85% 50% / 0.6),
+    0 0 10px hsl(150 85% 45% / 0.35),
+    0 0 20px hsl(150 85% 40% / 0.15),
+    0 0 40px hsl(150 85% 38% / 0.05);
 }
 .text-glow {
   text-shadow:
-    0 0 2px hsl(180 75% 32% / 0.3),
-    0 0 6px hsl(180 75% 32% / 0.1);
+    0 0 3px hsl(152 65% 35% / 0.4),
+    0 0 8px hsl(152 65% 30% / 0.15);
 }
 
 /* Box glow for cards / panels */
 .dark .box-glow {
   box-shadow:
-    0 0 6px hsl(180 100% 45% / 0.12),
-    0 0 12px hsl(180 100% 45% / 0.06),
-    inset 0 0 6px hsl(180 100% 45% / 0.04);
+    0 0 6px hsl(150 85% 38% / 0.12),
+    0 0 12px hsl(150 85% 38% / 0.06),
+    inset 0 0 6px hsl(150 85% 38% / 0.04);
 }
 .box-glow {
   box-shadow:
-    0 0 4px hsl(180 75% 32% / 0.1),
-    0 0 8px hsl(180 75% 32% / 0.05);
+    0 0 4px hsl(152 65% 28% / 0.1),
+    0 0 8px hsl(152 65% 28% / 0.05);
 }
 
 /* Terminal cursor blink */
@@ -542,8 +543,8 @@
   background: radial-gradient(
     ellipse at center,
     transparent 50%,
-    hsl(185 18% 3% / 0.4) 80%,
-    hsl(185 18% 3% / 0.8) 100%
+    hsl(155 20% 2.5% / 0.4) 80%,
+    hsl(155 20% 2.5% / 0.8) 100%
   );
   z-index: 9997;
 }
@@ -653,3 +654,99 @@
 .aurora-drift-c { animation: aurora-drift-chaotic 8s ease-in-out infinite; }
 .aurora-pulse-e { animation: aurora-pulse-erratic 4s ease-in-out infinite; }
 .animate-shimmer { animation: shimmer 2.5s ease-in-out infinite; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   GAME UI — Peephole, Dialog, Effects
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Peephole glow — pulsing ring around the peephole */
+@keyframes peephole-pulse {
+  0%, 100% { box-shadow: 0 0 8px hsl(150 85% 38% / 0.2), 0 0 20px hsl(150 85% 38% / 0.1); }
+  50% { box-shadow: 0 0 16px hsl(150 85% 38% / 0.4), 0 0 40px hsl(150 85% 38% / 0.2); }
+}
+.peephole-glow {
+  animation: peephole-pulse 2s ease-in-out infinite;
+}
+
+/* ── Dialog panel — dirty peephole optics, heavy grain, rustic ── */
+.dialog-panel {
+  position: relative;
+  padding: 1.5rem 1.75rem;
+  background: hsl(155 20% 2% / 0.88);
+  border: 1px solid hsl(150 75% 40% / 0.1);
+  box-shadow:
+    0 0 8px hsl(150 85% 38% / 0.04),
+    0 0 25px hsl(150 85% 38% / 0.02),
+    inset 0 0 30px hsl(155 20% 1% / 0.6),
+    inset 0 1px 0 hsl(150 80% 45% / 0.06);
+  overflow: hidden;
+}
+
+/* Scanlines inside panel — heavier for dirty feel */
+.dialog-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    hsl(150 80% 45% / 0.3) 2px,
+    hsl(150 80% 45% / 0.3) 3px
+  );
+  z-index: 1;
+}
+
+/* Grain / noise — dirtier, more visible */
+.dialog-panel::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  animation: nianh-noise-shift 0.3s steps(4) infinite;
+  z-index: 2;
+  mix-blend-mode: overlay;
+}
+
+/* Screen shake for errors */
+@keyframes screen-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+}
+.screen-shake {
+  animation: screen-shake 0.3s ease-in-out;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TEXT GLITCH — letters shift occasionally, peephole dirty optics
+   ═══════════════════════════════════════════════════════════════════════ */
+@keyframes text-glitch {
+  0%, 85%   { transform: none; }
+  86%       { transform: translateX(-1.5px) skewX(-0.4deg); }
+  87%       { transform: translateX(2px) translateY(-0.5px); }
+  88%       { transform: translateX(-0.5px) skewX(0.3deg); }
+  89%, 93%  { transform: none; }
+  94%       { transform: translateX(1px) translateY(0.3px); }
+  95%       { transform: translateX(-1px) skewX(-0.2deg); }
+  96%, 100% { transform: none; }
+}
+@keyframes text-glitch-alt {
+  0%, 78%   { transform: none; }
+  79%       { transform: translateX(1px) skewX(0.3deg); }
+  80%       { transform: translateX(-2px) translateY(0.4px); }
+  81%, 100% { transform: none; }
+}
+.text-glitch {
+  animation: text-glitch 5s steps(1) infinite;
+}
+.text-glitch:nth-child(even) {
+  animation: text-glitch-alt 7s steps(1) infinite;
+}

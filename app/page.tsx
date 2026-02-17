@@ -1,5 +1,5 @@
-import { ComponentExample } from "@/components/component-example";
+import { GameContainer } from "@/components/game/GameContainer";
 
 export default function Page() {
-return <ComponentExample />;
+  return <GameContainer />;
 }
